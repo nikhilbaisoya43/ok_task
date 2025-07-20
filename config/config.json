@@ -1,0 +1,35 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "nikhil",
+    "database": "public",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": false
+    }
+  },
+  "test": {
+    "username": "postgres",
+    "password": "nikhil",
+    "database": "public",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": false
+    }
+  },
+  "production": {
+    "username": "postgres",
+    "password": "nikhil",
+    "database": "public",
+    "host": "127.0.0.1",
+    "port": 5432,
+    "dialect": "postgres",
+    "dialectOptions": {
+      "ssl": false
+    }
+  }
+}
