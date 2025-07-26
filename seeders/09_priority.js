@@ -14,23 +14,23 @@ module.exports = {
     */
     await queryInterface.bulkInsert('Priorities', [{
       priority_name: "Critical",
-      LocationId: 1,
-      ClientId: 1
+      // LocationId: 1,
+      // ClientId: 1
     },
     {
       priority_name: "High",
-      LocationId: 1,
-      ClientId: 1
+      // LocationId: 1,
+      // ClientId: 1
     },
     {
       priority_name: "Medium",
-      LocationId: 1,
-      ClientId: 1
+      // LocationId: 1,
+      // ClientId: 1
     },
     {
       priority_name: "Low",
-      LocationId: 1,
-      ClientId: 1
+      // LocationId: 1,
+      // ClientId: 1
     }
     ], {});
   },

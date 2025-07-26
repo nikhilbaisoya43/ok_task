@@ -12,27 +12,27 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('AuditOptions', [{
-      audit_opt: "PET Scan",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      audit_opt: "Mammo Chart",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      audit_opt: "I&I",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      audit_opt: "None",
-      ClientId: 1,
-      LocationId: 1
-    }
-    ], {});
+    // await queryInterface.bulkInsert('AuditOptions', [{
+    //   audit_opt: "PET Scan",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   audit_opt: "Mammo Chart",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   audit_opt: "I&I",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   audit_opt: "None",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // }
+    // ], {});
   },
 
   async down(queryInterface, Sequelize) {

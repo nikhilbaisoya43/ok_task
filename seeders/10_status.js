@@ -12,22 +12,23 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Statuses', [{
-      status_name: "Open",
-      LocationId: 1,
-      ClientId: 1
-    },
-    {
-      status_name: "Complete",
-      LocationId: 1,
-      ClientId: 1
-    },
-    {
-      status_name: "Incomplete",
-      LocationId: 1,
-      ClientId: 1
-    }
-    ], {});
+    // await queryInterface.bulkInsert('Statuses', [
+    // //   {
+    // //   status_name: "Open",
+    // //   LocationId: 1,
+    // //   ClientId: 1
+    // // },
+    // // {
+    // //   status_name: "Complete",
+    // //   LocationId: 1,
+    // //   ClientId: 1
+    // // },
+    // // {
+    // //   status_name: "Incomplete",
+    // //   LocationId: 1,
+    // //   ClientId: 1
+    // // }
+    // ], {});
   },
 
   async down(queryInterface, Sequelize) {

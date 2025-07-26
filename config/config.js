@@ -2,14 +2,17 @@ require("dotenv").config(); // Load environment variables
 
 module.exports = {
   "development": {
-    "username": "postgres",
-    "password": "nikhil",
-    "database": "public", // Change this to your desired database name
-    "host": "127.0.0.1",
+    "username": "neondb_owner",
+    "password": "npg_onIt9ly7PzgB",
+    "database": "neondb", // Change this to your desired database name
+    "host": "ep-flat-heart-adwgyiaa-pooler.c-2.us-east-1.aws.neon.tech",
     "port": 5432,
     "dialect": "postgres",
     "dialectOptions": {
-      "ssl": false
+      "ssl": {
+        "require": true,
+        "rejectUnauthorized": false
+      }
     }
   }
 };

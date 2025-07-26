@@ -18,6 +18,7 @@ PrimDiagFeedback.init({
 },
     {
         sequelize,
+        timestamps: true,
         paranoid: true
     }
 );
@@ -41,6 +42,7 @@ SecDiagFeedback.init({
 },
     {
         sequelize,
+        timestamps: true,
         paranoid: true
     }
 );
@@ -64,6 +66,7 @@ ProceduresFeedback.init({
 },
     {
         sequelize,
+        timestamps: true,
         paranoid: true
     }
 );
@@ -87,6 +90,7 @@ EdEmFeedback.init({
 },
     {
         sequelize,
+        timestamps: true,
         paranoid: true
     }
 );

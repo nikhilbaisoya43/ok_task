@@ -12,42 +12,42 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('ResponsibleParties', [{
-      resp_party_name: "Pharmacy",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "Nursing",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "DP",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "Missing Information",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "System",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "Stop Time",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      resp_party_name: "Finalised",
-      ClientId: 1,
-      LocationId: 1
-    }
-    ], {});
+    // await queryInterface.bulkInsert('ResponsibleParties', [{
+    //   resp_party_name: "Pharmacy",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "Nursing",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "DP",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "Missing Information",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "System",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "Stop Time",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   resp_party_name: "Finalised",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // }
+    // ], {});
   },
 
   async down(queryInterface, Sequelize) {

@@ -15,37 +15,51 @@ module.exports = {
     await queryInterface.bulkInsert('ModifierFeedbacks', [{
       feedback_name: "Revenue Modifier",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
-      feedback_name: "Laterality Modifier",
+      feedback_name: "Laterality Modifier", 
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Invalid Modifier",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "CCI edit",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "HCPCS Modifier",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Information Modifier",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Other",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
     ], {});
   },

@@ -15,32 +15,44 @@ module.exports = {
     await queryInterface.bulkInsert('EdEmFeedbacks', [{
       feedback_name: "Overcoded",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Undercoded",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Missed EM",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "EM Category",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Client Guideline not followed",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Other",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
 
     ], {});

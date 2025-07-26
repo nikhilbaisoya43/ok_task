@@ -15,57 +15,79 @@ module.exports = {
     await queryInterface.bulkInsert('SecDiagFeedbacks', [{
       feedback_name: "Specificity",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Combination code",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Sequencing",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Add-on code",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Sign&Symp Vs Definite Diagnosis",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Documentation Vs DX appended",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Status",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "External Cause code",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "ICD Guideline not followed",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Condition not addressed",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     },
     {
       feedback_name: "Other",
       ClientId: 1,
-      LocationId: 1
+      LocationId: 1,
+      createdAt: new Date(),
+      updatedAt: new Date()
     }
     ], {});
   },

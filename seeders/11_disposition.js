@@ -12,32 +12,32 @@ module.exports = {
      *   isBetaMember: false
      * }], {});
     */
-    await queryInterface.bulkInsert('Dispositions', [{
-      disposition_name: "Home", 
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      disposition_name: "Transfer",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      disposition_name: "AMA",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      disposition_name: "Facility",
-      ClientId: 1,
-      LocationId: 1
-    },
-    {
-      disposition_name: "Nursing Home",
-      ClientId: 1,
-      LocationId: 1
-    },
-    ], {});
+    // await queryInterface.bulkInsert('Dispositions', [{
+    //   disposition_name: "Home", 
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   disposition_name: "Transfer",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   disposition_name: "AMA",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   disposition_name: "Facility",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // {
+    //   disposition_name: "Nursing Home",
+    //   ClientId: 1,
+    //   LocationId: 1
+    // },
+    // ], {});
   },
 
   async down(queryInterface, Sequelize) {

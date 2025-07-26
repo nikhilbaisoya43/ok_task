@@ -1,6 +1,10 @@
 require("dotenv").config();
 
-console.log(process.env.DATABASE_NAME, "process.env.DATABASE_NAME")
+let data = process.env
+console.log(
+data.DATABASE_NAME,
+data.DATABASE_USER,
+data.DATABASE_PASSWORD,data.DATABASE_PORT,data.DATABASE_HOST)
 const logger = require('../app/services/winstonLogger');
 const Sequelize = require("sequelize");
 const sequelizeServer = new Sequelize(
@@ -11,6 +15,12 @@ const sequelizeServer = new Sequelize(
     host: process.env.DATABASE_HOST,
     port: process.env.DATABASE_PORT || 5432,
     dialect: 'postgres',
+    dialectOptions: {
+      ssl: {
+        require: true,
+        rejectUnauthorized: false // Use this if you're connecting to a self-signed certificate
+      }
+    },
     pool: {
       max: 5,
       min: 0,
@@ -20,7 +30,6 @@ const sequelizeServer = new Sequelize(
     logging: false
   }
 );
-
 sequelizeServer
   .authenticate()
   .then(() => {

@@ -1,6 +1,11 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../../config/dbConfig');
-const Sequelize = require('sequelize');
+
+// Add this check to debug
+if (!sequelize) {
+    console.error('Sequelize instance is undefined. Check dbConfig.js');
+    process.exit(1);
+}
 
 class Client extends Model { };
 Client.init({
@@ -16,17 +21,16 @@ Client.init({
     },
     createdAt: {
         type: DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
-      },
+        defaultValue: DataTypes.NOW, // Use DataTypes.NOW instead of Sequelize.literal
+    },
     updatedAt: {
         type: DataTypes.DATE,
-        defaultValue: Sequelize.fn('NOW'),
+        defaultValue: DataTypes.NOW,
     },
-},
-    {
-        sequelize,
-        paranoid:true,
-    }
-);
+}, {
+    sequelize, // shorthand for sequelize: sequelize
+    modelName: 'Client',
+    paranoid: true
+});
 
 module.exports = Client;
