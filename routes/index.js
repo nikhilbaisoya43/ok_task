@@ -54,7 +54,7 @@ router.post("/login", async (req, res, next) => {
 
   try {
     // Mock user data (no DB check, to be added later)
-    const user = { id: 1, email, isAttending: false };
+    const user = { id: 1, email, isAttending: true };
 
     // Set token payload and user data
     req.user = user;
