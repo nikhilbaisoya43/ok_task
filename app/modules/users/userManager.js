@@ -1139,98 +1139,158 @@ module.exports = class UserManager {
     async loggedInUserDetail(requestData) {
         const {LOG_HOUR} = notificationTypeContants;
         try {
-            let user = await User.findByPk(requestData.id, {
-                attributes: ['id', 'image_url',
-                    ['first_name', 'first_name'],
-                    ['last_name', 'last_name'],
-                    ['date_of_birth', 'date_of_birth'],
-                    ['joining_date', 'joining_date'],
-                    ['email', 'email'],
-                    ['employee_id', 'employee_id'],
-                    [Sequelize.col('Role.id'), 'RoleId'],
-                    [Sequelize.col('Role.role_name'), 'role'],
-                    [Sequelize.col('AddedByUser.first_name'), 'added_by_user_first_name'],
-                    [Sequelize.col('AddedByUser.last_name'), 'added_by_user_last_name'],
-                    [Sequelize.col('AddedByUser.image_url'), 'added_by_user_image_url']
+            // let user = await User.findByPk(requestData.id, {
+            //     attributes: ['id', 'image_url',
+            //         ['first_name', 'first_name'],
+            //         ['last_name', 'last_name'],
+            //         ['date_of_birth', 'date_of_birth'],
+            //         ['joining_date', 'joining_date'],
+            //         ['email', 'email'],
+            //         ['employee_id', 'employee_id'],
+            //         [Sequelize.col('Role.id'), 'RoleId'],
+            //         [Sequelize.col('Role.role_name'), 'role'],
+            //         [Sequelize.col('AddedByUser.first_name'), 'added_by_user_first_name'],
+            //         [Sequelize.col('AddedByUser.last_name'), 'added_by_user_last_name'],
+            //         [Sequelize.col('AddedByUser.image_url'), 'added_by_user_image_url']
+            //     ],
+            //     include: [
+            //         {
+            //             model: Role,
+            //             attributes: []
+            //         },
+            //         {
+            //             model: Specialty,
+            //             attributes: [['id', 'id'], ['spec_name', 'name']],
+            //             through: {
+            //                 attributes: [],
+            //             }
+            //         },
+            //         {
+            //             model: Locations,
+            //             attributes: [['id', 'id'], ['loc_name', 'name']],
+            //             through: {
+            //                 attributes: [],
+            //             }
+            //         },
+            //         {
+            //             model: Client,
+            //             attributes: [['id', 'id'], ['client_name', 'name']],
+            //             through: {
+            //                 attributes: [],
+            //             }
+            //         },
+            //         {
+            //             model: Designation,
+            //             attributes: [['id', 'id'], ['name', 'name']]
+            //         },
+            //         {
+            //             model: User,
+            //             as : "AddedByUser",
+            //             attributes: [],
+            //         }
+            //     ],
+
+            // });
+            // if (user.dataValues.date_of_birth) {
+            //     user.dataValues.date_of_birth = moment(user.date_of_birth).format("MM/DD/YYYY")
+            // }
+            // if (user.dataValues.joining_date) {
+            //     user.dataValues.joining_date = moment(user.joining_date).format("MM/DD/YYYY")
+            // }
+
+            // user.dataValues.Role = user.dataValues.role;
+            // delete user.dataValues.role;
+
+            // const startOfMonth = moment().startOf('month');
+            // const presentDaysInThisMonth = await Attendance.count({
+            //     where: {
+            //         UserId: user.id,
+            //         date: { [Op.gte]: startOfMonth },
+            //         is_on_leave: false
+            //     }
+            // });
+
+            // const dayCountOfMonthTillToday = parseInt(moment().format('D'));
+            // const absentDays = dayCountOfMonthTillToday - presentDaysInThisMonth;
+
+            // user.dataValues.present = presentDaysInThisMonth ?? 0;
+            // user.dataValues.absent = absentDays ?? 0;
+
+            // const notifications = await Notification.findAll({
+            //     where: {
+            //         user_id: requestData.id
+            //     },
+            //     raw: true,
+            //     order: [['createdAt', 'DESC']]
+            // });
+
+            // const userMissedLogHour = await Notification.findAll({
+            //     where: { [Op.and]: [{ user_id: requestData.id }, { notification_type_id: LOG_HOUR }] },
+            //     raw: true,
+            //     attributes: [["createdAt", "date"], ["id", "notification_id"], "user_id", "is_read", ["notification","notification_description"]],
+            // });
+
+            // user = {...user.dataValues, notifications, userMissedLogHour};
+
+            let user = {
+                id: 1,
+                image_url: "https://example.com/profile.jpg",
+                first_name: "John",
+                last_name: "Doe",
+                date_of_birth: "01/15/1990",
+                joining_date: "03/01/2022",
+                email: "john.doe@example.com",
+                employee_id: "EMP123456",
+                RoleId: 2,
+                Role: "Manager",
+                added_by_user_first_name: "Alice",
+                added_by_user_last_name: "Smith",
+                added_by_user_image_url: "https://example.com/alice.jpg",
+
+                Specialties: [
+                    { id: 1, name: "Backend Development" },
+                    { id: 2, name: "System Design" }
                 ],
-                include: [
+
+                Locations: [
+                    { id: 1, name: "New York Office" },
+                    { id: 2, name: "Remote" }
+                ],
+
+                Clients: [
+                    { id: 1, name: "ABC Corp" },
+                    { id: 2, name: "XYZ Ltd" }
+                ],
+
+                Designation: {
+                    id: 1,
+                    name: "Senior Engineer"
+                },
+
+                present: 20,
+                absent: 5,
+
+                notifications: [
                     {
-                        model: Role,
-                        attributes: []
-                    },
-                    {
-                        model: Specialty,
-                        attributes: [['id', 'id'], ['spec_name', 'name']],
-                        through: {
-                            attributes: [],
-                        }
-                    },
-                    {
-                        model: Locations,
-                        attributes: [['id', 'id'], ['loc_name', 'name']],
-                        through: {
-                            attributes: [],
-                        }
-                    },
-                    {
-                        model: Client,
-                        attributes: [['id', 'id'], ['client_name', 'name']],
-                        through: {
-                            attributes: [],
-                        }
-                    },
-                    {
-                        model: Designation,
-                        attributes: [['id', 'id'], ['name', 'name']]
-                    },
-                    {
-                        model: User,
-                        as : "AddedByUser",
-                        attributes: [],
+                        id: 101,
+                        user_id: 1,
+                        notification_type_id: 5,
+                        notification: "Your shift starts at 9 AM",
+                        is_read: false,
+                        createdAt: new Date("2025-07-25T09:00:00")
                     }
                 ],
 
-            });
-            if (user.dataValues.date_of_birth) {
-                user.dataValues.date_of_birth = moment(user.date_of_birth).format("MM/DD/YYYY")
-            }
-            if (user.dataValues.joining_date) {
-                user.dataValues.joining_date = moment(user.joining_date).format("MM/DD/YYYY")
-            }
-
-            user.dataValues.Role = user.dataValues.role;
-            delete user.dataValues.role;
-
-            const startOfMonth = moment().startOf('month');
-            const presentDaysInThisMonth = await Attendance.count({
-                where: {
-                    UserId: user.id,
-                    date: { [Op.gte]: startOfMonth },
-                    is_on_leave: false
-                }
-            });
-
-            const dayCountOfMonthTillToday = parseInt(moment().format('D'));
-            const absentDays = dayCountOfMonthTillToday - presentDaysInThisMonth;
-
-            user.dataValues.present = presentDaysInThisMonth ?? 0;
-            user.dataValues.absent = absentDays ?? 0;
-
-            const notifications = await Notification.findAll({
-                where: {
-                    user_id: requestData.id
-                },
-                raw: true,
-                order: [['createdAt', 'DESC']]
-            });
-
-            const userMissedLogHour = await Notification.findAll({
-                where: { [Op.and]: [{ user_id: requestData.id }, { notification_type_id: LOG_HOUR }] },
-                raw: true,
-                attributes: [["createdAt", "date"], ["id", "notification_id"], "user_id", "is_read", ["notification","notification_description"]],
-            });
-
-            user = {...user.dataValues, notifications, userMissedLogHour};
+                userMissedLogHour: [
+                    {
+                        date: "2025-07-20T10:00:00",
+                        notification_id: 201,
+                        user_id: 1,
+                        is_read: false,
+                        notification_description: "You missed logging hours on 2025-07-20"
+                    }
+                ]
+            };
             return user;
         }
         catch (error) {
