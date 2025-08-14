@@ -12,7 +12,7 @@ module.exports = class MasterController {
             //     })
             // }
             // else {
-                const masterData = await new MasterManager().getMasterData(request.query.client, request.query.location, request.query.role);
+                const masterData = await new MasterManager().getMasterData(request.user.client_ids, request.user.location_ids, request.query.role);
                 cacheInstance.set(`${request.url}-${request.query.client}-${request.query.location}-${request.query.role}`, masterData);
                 response.status(200).json({
                     success: true,
